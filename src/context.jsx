@@ -1,13 +1,14 @@
 import { createContext, useState } from 'react'
 const initial = [
-    {isLeft:false,isSelected:false,text:'testing'},
-    {isLeft:false,isSelected:false,text:'trying 2'},
-    {isLeft:true,isSelected:false,text:'testing left'}
+    {isLeft:false,isSelected:false,text:'One'},
+    {isLeft:false,isSelected:false,text:'Two'},
+    {isLeft:true,isSelected:false,text:'Three'}
 
 ]
-export const ListContext = createContext()
+let ListContext
+export default ListContext = createContext()
 
-const Context = ({children}) =>{
+export const Context = ({children}) =>{
     const [list,setList] = useState(initial)
 
     return (
@@ -17,5 +18,4 @@ const Context = ({children}) =>{
     )
 }
 
-export default Context
 
