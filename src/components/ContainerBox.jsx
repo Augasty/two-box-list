@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ListContext } from "./context";
+import { ListContext } from "../context";
 
 const ContainerBox = () => {
   const { list, setList } = useContext(ListContext);

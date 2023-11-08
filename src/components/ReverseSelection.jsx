@@ -1,22 +1,24 @@
 import { useContext } from "react";
-import { ListContext } from "./context";
+import { ListContext } from "../context";
 
 const ReverseSelection = () => {
   const { list, setList } = useContext(ListContext);
 
   const handleClick = () => {
-    let tempList = [...list];
-    for (let li of tempList) {
-      li.isSelected = !li.isSelected;
-    }
-    console.log(tempList)
-    setList(tempList);
+    const updatedList = list.map((item) => ({
+      ...item,
+      isSelected: !item.isSelected,
+    }));
+    
+    setList(updatedList);
+    console.log(list)
   };
+
   return (
-    <button onClick={() => handleClick()}>
-      ReverseSelection
+    <button onClick={handleClick}>
+      Reverse Selection
     </button>
   );
 };
 
-export default ReverseSelection
+export default ReverseSelection;
