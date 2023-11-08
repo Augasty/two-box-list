@@ -11,11 +11,11 @@ const ContainerBox = ({ side }) => {
       <div className="left-box">
         <li>
           {list.map((li, index) => {
-            if (side == li.isLeft) {
+            if (side === li.isLeft) {
               return (
                 <ul key={index}>
                   <input
-                    type="checkbox" value={li.isSelected}
+                    type="checkbox" checked={li.isSelected}
                     onChange={() => {
                       const updatedList = list.map((item) => ({...item}));
                       
